@@ -1,0 +1,16 @@
+import random
+secretnumber=random.randint(1,30)
+print("i am thinking a number between 1 and 30 ")
+for i in range(7):
+    print("guess the number")
+    number=int(input())
+    if number<secretnumber:
+        print("number is too low")
+    elif number>secretnumber :
+        print("number is too high")
+    else:
+        break
+if number==secretnumber:
+    print("you guessed the correct number")
+else:
+    print("you guess the out of box number")
