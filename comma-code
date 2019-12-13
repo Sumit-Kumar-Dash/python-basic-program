@@ -1,0 +1,7 @@
+def commacode(l):
+    s=""
+    for i in l:
+        s=s+str(i)+', '
+    return s
+li=['apple','banana','cats','tofu']
+print(commacode(li))
