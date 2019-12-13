@@ -3,10 +3,13 @@ def collatz(number):
         return number//2
     else:
         return 3*number+1
-no=int(input("enter the number"))
-a=collatz(no)
-if a!=1:
-    print(a)
-    while a!=1 :
-        a=collatz(a)
+try:
+    no=int(input("enter the number"))
+    a=collatz(no)
+    if a!=1:
         print(a)
+        while a!=1 :
+            a=collatz(a)
+            print(a)
+except:
+    print("invalid input")
