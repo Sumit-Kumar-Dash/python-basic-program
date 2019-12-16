@@ -1,0 +1,62 @@
+import sys
+for i in range(1):
+   import numpy as np
+   theBoard = {1: ' ',2: ' ',3: ' ',4: ' ',5: ' ',6: ' ',7: ' ',8: ' ',9: ' '}
+   def printBoard(board):
+        print(board[1] + '|' + board[2] + '|' + board[3])
+        print('-----')
+        print(board[4] + '|' + board[5] + '|' + board[6])
+        print('-----')
+        print(board[7] + '|' + board[8] + '|' + board[9])
+    
+   printBoard(theBoard)
+   turn='x'
+
+   for i in range(9):
+    print("turn for  "+turn+" . Move for which space? \n moves are :")
+    print("1 : top left \t 2 : top middle \t 3 : top- right ")
+    print("4 : mid left \t 5 : mid middle \t 6 : mid- right ")
+    print("7 : low left \t 8 : low middle \t 9 : low- right ")
+    while(True):
+        move=int(input())
+        if theBoard[move]==' ':
+            theBoard[move]=turn
+            break
+        else:
+            print("invalid move !! try again")
+            continue
+    if turn=='x':
+        turn='o'
+    else:
+        turn='x'
+    printBoard(theBoard)
+    arr=np.ndarray([[theBoard[1],theBoard[2],theBoard[3]],[theBoard[4],theBoard[5],theBoard[6]],[theBoard[7],theBoard[8],theBoard[9]]],dtype='str')
+    print(arr)
+    myList = [0,1, 2]
+    for j in myList:
+        print("fdd")
+        l=[]
+        l1=[]
+        for i in myList:
+            l.append(arr[i][j])
+            if l.count(l[0])==len(l):
+                print("winner is "+turn)
+                sys.exit()
+            l1.append(arr[j][i])
+            if l1.count(l1[0])==len(l1):
+                print("winner is "+turn)
+                sys.exit()
+    for j in range(0,2):
+        if arr[j][j]==arr[j+1][j+1]:
+            print("winner is "+turn)
+            sys.exit()
+    if arr[0][2]==arr[1][1]==arr[2][0]:
+        print("winner is "+turn)
+        sys.exit()
+            
+            
+            
+            
+   
+    
+    
