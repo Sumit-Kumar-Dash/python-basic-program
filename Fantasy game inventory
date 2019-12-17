@@ -1,0 +1,23 @@
+def displayInventory(inv):
+    print("Inventory:")
+    sum=0
+    for i,j in inv.items():
+        print(i,j)
+        sum=sum+j
+    print("Ttal no. of items are:",sum)
+inv={'rope':1,'torch':4,'gold coin':42,'dagger':1,'arrow':12}
+​
+displayInventory(inv)
+inventory={'gold coin':42,'rope':1}
+dragonloot=['gold coin','dagger','arrow','gold coin','ruby','gold coin']
+def addToInventory(inventory,dragonloot):
+    for i,j in inventory.items():
+        for k in dragonloot:
+            if i==k:
+                j=j+1
+                inventory[i]=j
+            elif k not in inventory.keys():
+		inventory.setdefault(k,1)
+    return inventory
+inve=addToInventory(inventory,dragonloot)
+displayInventory(inve)
