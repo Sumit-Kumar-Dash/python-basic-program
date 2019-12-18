@@ -1,0 +1,11 @@
+matrix1 = [['00, '099','0982','09873','87654324','098765435'],['2345670','1234561','2345672','8765433','644444444'],['rtetq0','ikyujt1','kiyuj2','k7j6ty3','l9yujty4','6yh5','yuttrfcvtbyh6'],['087hy','8imknujy1','ujthk2','yujhtbgrfv3'],['ruktjfgbd0','98yt1','u6trgrf2','9876543','4']]
+matrix = [['8', '99','982','9873','87654324','98765435'],['2345670','1234561','2345672','8765433','644444444'],['rtetq','ikyujt','kiyuj','kjty','yuttrfcvtbyh'],['87','imknujy','ujthk','yujhtbgrfv'],['ruktjfgbd','yt','utrgrf','9876543','4']]
+for i in matrix :
+  l=[]
+  for j in i:
+    l.append(len(j))
+  large=max(l)
+  
+  for k in i:
+    print(k.rjust(large-len(k)+1))
+    
