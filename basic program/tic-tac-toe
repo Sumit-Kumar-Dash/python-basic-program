@@ -32,7 +32,7 @@
     arr=np.array([[theBoard[1],theBoard[2],theBoard[3]],[theBoard[4],theBoard[5],theBoard[6]],[theBoard[7],theBoard[8],theBoard[9]]],dtype='str')
     
     for j in range(3):
-        print("fdd")
+        
         l=[]
         l1=[]
         for i in range(3):
