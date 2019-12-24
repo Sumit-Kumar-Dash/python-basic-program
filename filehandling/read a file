@@ -1,0 +1,9 @@
+f=open('file1.txt','r+')
+while True:
+    s=f.readline()
+    if s=='':
+        break
+    print(s,end="")
+
+
+f.close()
