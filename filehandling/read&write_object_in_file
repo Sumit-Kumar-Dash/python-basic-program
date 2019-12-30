@@ -1,0 +1,25 @@
+class student:
+  def __init__(self,name,age):
+    self.name=name
+    self.age=age
+s=[student('sumit',19),student('santo',23),student('rahul',21)]
+def save():
+  import pickle
+  f1=open('file1.obj','wb')
+  for i in s:
+    pickle.dump(i,f1)
+  f1.close()
+def vieew():
+  import pickle
+  f2=open('file1.obj','rb')
+  stud=[]
+  while True:
+    try:
+      stud=stud+[pickle.load(f2)]
+    except:
+      print("End of file reached")
+      break
+  return stud 
+    
+    
+    
