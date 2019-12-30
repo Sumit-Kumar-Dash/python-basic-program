@@ -1,0 +1,16 @@
+f=open('file1.txt','r+')
+x=input("enter the text to be modified")
+y=input("enter the new text")
+l=0
+while True:
+    s=f.readline()
+    if s=='':
+        break
+    l=l+len(s)
+    if s==x:
+      f.seek(l-len(s)+1,1)
+      f.write(y)
+      break
+     
+
+f.close()
