@@ -1,0 +1,48 @@
+import shutil, os
+os.chdir('C:\\Users\\home\\Desktop\\New folder\\python programs')
+f=open("C:\\Users\\home\\Desktop\\New folder\\python programs",'r+')
+shutil.copy('C:\\Users\\home\\Desktop\\New folder\\python programs','eggs.txt')
+shutil.move('C:\\Users\\home\\Desktop\\New folder\\python programs','C:\\Users\\home\\Desktop\\New folder')
+for filename in os.listdir():
+    if filename.endswith('.rxt'):
+        #os.unlink(filename)
+        print(filename)
+import send2trash
+baconFile = open('bacon.txt', 'a')
+baconFile.write('Bacon is not a vegetable.')
+baconFile.close()
+send2trash.send2trash('bacon.txt')
+
+import os
+for folderName, subfolders, filenames in os.walk('C:\\delicious'):
+    print('The current folder is ' + folderName)
+for subfolder in subfolders:
+    print('SUBFOLDER OF ' + folderName + ': ' + subfolder)
+for filename in filenames:
+    print('FILE INSIDE ' + folderName + ': '+ filename)
+    print('')
+
+import zipfile, os
+os.chdir('C:\\') # move to the folder with example.zip
+exampleZip = zipfile.ZipFile('example.zip')
+print(exampleZip.namelist())
+spamInfo = exampleZip.getinfo('spam.txt')
+print(spamInfo.file_size)
+print(spamInfo.compress_size)
+print('Compressed file is %sx smaller!' % (round(spamInfo.file_size / spamInfo.compress_size, 2)))
+exampleZip.close()
+
+os.chdir('C:\\') # move to the folder with example.zip
+exampleZip = zipfile.ZipFile('example.zip')
+print(exampleZip.extractall())
+exampleZip.close()
+
+
+import zipfile
+newZip = zipfile.ZipFile('new.zip', 'w')
+newZip.write('spam.txt', compress_type=zipfile.ZIP_DEFLATED) #flate compression algorithm, which works well on all types of data.
+newZip.close()
+
+
+
+
