@@ -1,0 +1,15 @@
+import re,os,shutil
+datepattern=re.compile(r'^(.*?)(0|1)?\d-(0|1|2|3)?\d-(19|20)?\d\d(.*?)$',re.VERBOSE)
+for ame in os.listdir('.'):
+  j=datepattern.search(ame)
+  if j==None:
+    continue
+  beforepart=j.group(1)
+  monthpart=j.group(2)
+  daypart=j.group(4)
+  yearpart=j.group(6)
+  afterpart=j.group(8)
+  eur=beforepart+daypart+"-"+"monthpart"+"-"+"yearpart"+"afterpart"
+  print("renaming '%s' to '%s'...",%(ame,eur))
+  #shutil.move(ame,eur)
+
