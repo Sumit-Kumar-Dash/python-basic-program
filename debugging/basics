@@ -6,7 +6,11 @@ try:
 		if a>5:
 			raise Wrong("user defined")
 except Wrong as i:
-		print(i.j)
+		print(i.j)try:
+		if a>5:
+			raise Exception("pre defined")
+except Exception:
+	print("Except block")
 		print("Wrong")
     
 else:
@@ -17,9 +21,17 @@ finally:
     
     
 try:
-		if a>5:
-			raise Exception("pre defined")
-except 
+	if a>5:
+		raise Exception("pre defined")
+except Exception:
+	print("Except block")
+	
+try:
+	if a>5:
+		raise SyntaxError("pre defined")  #we can write any error class name
+except SyntaxError:
+	print("Except block")
+
 
 
 
