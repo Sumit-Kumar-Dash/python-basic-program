@@ -56,4 +56,38 @@ for sym, w, h in (('*', 4, 4), ('O', 20, 5), ('x', 1, 3), ('ZZ', 3, 3),('d',7,7)
 
 #Assertions
 
+market_2nd = {'ns': 'green', 'ew': 'red'}
+mission_16th = {'ns': 'red', 'ew': 'green'}
+def switchLights(stoplight):
+    assert 'red' in stoplight.values(), 'Neither light is red! ' + str(stoplight)
+    for key in stoplight.keys():
+        if stoplight[key] == 'green':
+            stoplight[key] = 'yellow'
+        elif stoplight[key] == 'yellow':
+            stoplight[key] = 'red'
+        elif stoplight[key] == 'red':
+            stoplight[key] = 'green'
+    
+switchLights(market_2nd)
+
+
+#Logging
+import logging
+logging.basicConfig(level=logging.DEBUG, format=' %(asctime)s - %(levelname)s- %(message)s')  
+#To enable the logging module to display log messages on screen
+#basicConfig() function lets specify what details about the LogRecord object you want to see and how you want those details displayed.
+logging.debug('Start of program')
+
+def factorial(n):
+    logging.debug('Start of factorial(%s)' % (n))
+    total = 1
+    for i in range(n + 1):
+        total *= i
+        logging.debug('i is ' + str(i) + ', total is ' + str(total))
+    logging.debug('End of factorial(%s)' % (n))
+    return total
+
+print(factorial(5))
+logging.debug('End of program')
+
 
