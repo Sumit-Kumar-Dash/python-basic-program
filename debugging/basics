@@ -1,0 +1,42 @@
+class Wrong(NameError):
+	def __init__(self,j):
+		self.j=10
+a=input("Enter the input integer")
+try:
+		if a>5:
+			raise Wrong("user defined")
+except Wrong as i:
+		print(i.j)
+		print("Wrong")
+    
+else:
+    a=a+10
+    print("else block")
+finally:
+    print("final sure block")
+    
+    
+try:
+		if a>5:
+			raise Exception("pre defined")
+except 
+
+
+
+def boxPrint(symbol, width, height):
+if len(symbol) != 1:
+u raise Exception('Symbol must be a single character string.')
+if width <= 2:
+v raise Exception('Width must be greater than 2.')
+if height <= 2:
+w raise Exception('Height must be greater than 2.')
+Debugging 217
+print(symbol * width)
+for i in range(height - 2):
+print(symbol + (' ' * (width - 2)) + symbol)
+print(symbol * width)
+for sym, w, h in (('*', 4, 4), ('O', 20, 5), ('x', 1, 3), ('ZZ', 3, 3)):
+try:
+boxPrint(sym, w, h)
+x except Exception as err:
+y print('An exception happened: ' + str(err))
