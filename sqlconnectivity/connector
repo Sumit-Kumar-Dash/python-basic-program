@@ -32,8 +32,9 @@ try:
   
 except:
   cur.rollback()
-cur.close()
-cnx.close()
+finally:
+  cur.close()
+  cnx.close()
 
 
 
