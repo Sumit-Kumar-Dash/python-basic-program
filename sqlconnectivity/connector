@@ -25,15 +25,13 @@ try:
   row2=cur.fetchmany(5)
   for i in row2:
     print(i)
+    
+  del="delete from <table name> where id='%d'"
+  str=int(input("enter the value"))
+  cur.execute(del,str)
+  
 except:
   cur.rollback()
-  
-
-
-
-
-
-
 cur.close()
 cnx.close()
 
