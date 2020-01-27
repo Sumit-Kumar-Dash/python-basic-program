@@ -1,0 +1,42 @@
+import mysql.connector
+cnx=mysql.coonector.connect(host='localhost',database='mydb',user='root',password='Test')
+if cnx.is_connected():
+  print(" connected to my sql db")
+cur=cnx.cursor()
+try:
+  crt=("create table <table_name> (<column list with description>)")
+  cur.execute(crt)
+  cur.commit()
+  
+  name=input("enter the values")
+  ins=("inset into <table_name> <col_name> values (%s %s)")
+  cur.execute(ins,name)
+  cur.commit()
+  
+  sel=("<select statement>")
+  row=cur.fetchone()
+  while row is not None:
+    print(row)
+    row=cur.fetchone()
+  
+  row1=cur.fetchall()
+  for i in row1:
+    print(i)
+  row2=cur.fetchmany(5)
+  for i in row2:
+    print(i)
+except:
+  cur.rollback()
+  
+
+
+
+
+
+
+cur.close()
+cnx.close()
+
+
+
+  
